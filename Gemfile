@@ -14,4 +14,5 @@ group :development do
   gem "webmock"
   gem 'vcr'
   gem 'mocha'
+  gem 'rake', '~> 0.8.7'
 end
