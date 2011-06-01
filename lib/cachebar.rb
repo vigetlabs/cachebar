@@ -1,3 +1,4 @@
+require 'ostruct'
 require 'httparty'
 require 'digest/md5'
 require 'active_support'
