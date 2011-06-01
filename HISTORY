@@ -1,0 +1,7 @@
+== 1.0.0 / 2011-05-26
+  * Cache API responses in Redis from HTTParty requests
+  * Only cache APIs that have been registered with CacheBar.
+  * Stores response body as Redis string data type that is set to expire.
+  * Store a backup of responses incase the API service goes down.
+  * If an exception or timeout occurs and there is no backup an exception is raised.
+  * If a bad response is received the backup will be used if available otherwise the bad response will be returned

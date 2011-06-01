@@ -1,0 +1,204 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.twitter.com:443/1/statuses/user_timeline.json?screen_name=viget
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 24 May 2011 19:31:38 GMT
+      server:
+      - hi
+      status:
+      - 200 OK
+      x-transaction:
+      - 1306265498-2506-62218
+      x-ratelimit-limit:
+      - '150'
+      etag:
+      - ! '"4c74cf6d9797dc13b6fd08c37923e024"'
+      x-frame-options:
+      - SAMEORIGIN
+      last-modified:
+      - Tue, 24 May 2011 19:31:38 GMT
+      x-ratelimit-remaining:
+      - '123'
+      x-runtime:
+      - '0.01341'
+      x-transaction-mask:
+      - a6183ffa5f8ca943ff1b53b5644ef114c57c840f
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '33486'
+      pragma:
+      - no-cache
+      x-ratelimit-class:
+      - api
+      x-revision:
+      - DEV
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      x-mid:
+      - cc2c4ea23ba18afcff1e6d442a5dcf01a9b53867
+      x-ratelimit-reset:
+      - '1306267661'
+      set-cookie:
+      - _twitter_sess=BAh7CDoPY3JlYXRlZF9hdGwrCFi1fSMwAToHaWQiJTQ5Zjc4NzFhMjc2ZTZl%250AMzhjZWU3NjRjZWEzNzg1MWNmIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy%250AOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--0785af60e67557ff29e49f0f91b6b609ca6918cb;
+        domain=.twitter.com; path=/; HttpOnly
+      - guest_id=13062654989675722; path=/; expires=Thu, 23 Jun 2011 19:31:38 GMT
+      - k=96.10.0.146.1306265498964244; path=/; expires=Tue, 31-May-11 19:31:38 GMT;
+        domain=.twitter.com
+      vary:
+      - Accept-Encoding
+    body: ! '[{"in_reply_to_status_id_str":"72755187852382209","retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"prasadvx","in_reply_to_user_id_str":"46685588","in_reply_to_status_id":72755187852382209,"contributors":null,"retweeted":false,"text":"@prasadvx
+      http:\/\/www.viget.com\/blog\/studying-salutations2\/ :-)","created_at":"Mon
+      May 23 20:07:35 +0000 2011","place":null,"id_str":"72755573317320704","coordinates":null,"geo":null,"in_reply_to_user_id":46685588,"id":72755573317320704,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"text":"Why
+      We\u2019re Covering Kids (by @barn) http:\/\/goo.gl\/fb\/HioS4","place":null,"favorited":false,"truncated":false,"in_reply_to_status_id_str":null,"retweet_count":3,"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"source":"\u003Ca
+      href=\"http:\/\/www.google.com\/support\/youtube\/bin\/answer.py?hl=en&answer=164577\"
+      rel=\"nofollow\"\u003EGoogle\u003C\/a\u003E","contributors":null,"retweeted":false,"id_str":"72721638638092288","coordinates":null,"geo":null,"user":{"lang":"en","profile_background_tile":false,"favourites_count":0,"followers_count":1883,"follow_request_sent":false,"notifications":false,"friends_count":42,"description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","is_translator":false,"statuses_count":719,"profile_link_color":"2776a1","profile_sidebar_border_color":"dad74e","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","time_zone":"Eastern
+      Time (US & Canada)","listed_count":217,"following":true,"profile_use_background_image":true,"screen_name":"viget","verified":false,"profile_background_color":"14537f","location":"Wash
+      DC, Durham NC, Boulder CO","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","protected":false,"url":"http:\/\/viget.com","name":"Viget
+      Labs","id_str":"14171594","default_profile_image":false,"contributors_enabled":false,"profile_text_color":"333333","id":14171594,"default_profile":false,"show_all_inline_media":false,"geo_enabled":false,"utc_offset":-18000,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_sidebar_fill_color":"fdfab7"},"in_reply_to_user_id":null,"id":72721638638092288,"created_at":"Mon
+      May 23 17:52:44 +0000 2011"},{"in_reply_to_status_id_str":"71229887637225473","retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"EliVZ","in_reply_to_user_id_str":"14080974","in_reply_to_status_id":71229887637225473,"contributors":null,"retweeted":false,"text":"@EliVZ
+      @trek Thanks guys! It helps that puma''s stuff looks fantastic to start with.
+      Makes for fun work.","created_at":"Thu May 19 17:01:06 +0000 2011","place":null,"id_str":"71259093393874947","coordinates":null,"geo":null,"in_reply_to_user_id":14080974,"id":71259093393874947,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":"70321047060221952","retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"woley","in_reply_to_user_id_str":"15689271","in_reply_to_status_id":70321047060221952,"contributors":null,"retweeted":false,"text":"@woley
+      Jeans are okay with us!  We''re very casual at Viget.","created_at":"Tue May
+      17 03:38:39 +0000 2011","place":null,"id_str":"70332373421658112","coordinates":null,"geo":null,"in_reply_to_user_id":15689271,"id":70332373421658112,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"charliepark","in_reply_to_user_id_str":"3225381","in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"@charliepark
+      Alas, we don''t -- too busy this year!  Would love to chat, though.  Let''s
+      connect ...","created_at":"Mon May 16 18:32:01 +0000 2011","place":null,"id_str":"70194809083674625","coordinates":null,"geo":null,"in_reply_to_user_id":3225381,"id":70194809083674625,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":1,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"Thanks!
+      RT @klaustsen: Had a little talk with @viget at We the Creatives. Go read. Brilliant
+      people. http:\/\/wethecreatives.com\/viget","created_at":"Mon May 16 18:27:15
+      +0000 2011","place":null,"id_str":"70193609277849600","coordinates":null,"geo":null,"in_reply_to_user_id":null,"id":70193609277849600,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":"69943614880481280","retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"cdulude","in_reply_to_user_id_str":"1665611","in_reply_to_status_id":69943614880481280,"contributors":null,"retweeted":false,"text":"@cdulude
+      @jasonalley :-)","created_at":"Mon May 16 10:29:45 +0000 2011","place":null,"id_str":"70073442803777536","coordinates":null,"geo":null,"in_reply_to_user_id":1665611,"id":70073442803777536,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"RT
+      @refreshdc: New meetup! @robleto moderates a panel on Data-Driven Design. It''s
+      7pm on 5\/19 at @viget. Register: http:\/\/bit.ly\/lSFOtw","created_at":"Fri
+      May 13 16:58:42 +0000 2011","place":null,"id_str":"69084162224697345","coordinates":null,"geo":null,"in_reply_to_user_id":null,"id":69084162224697345,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":1,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"An
+      Unreal Redesign: Epic Games Advances to the Next Level http:\/\/goo.gl\/fb\/V4zHb","created_at":"Fri
+      May 06 16:15:44 +0000 2011","place":null,"id_str":"66536635411607553","coordinates":null,"geo":null,"in_reply_to_user_id":null,"id":66536635411607553,"source":"\u003Ca
+      href=\"http:\/\/www.google.com\/support\/youtube\/bin\/answer.py?hl=en&answer=164577\"
+      rel=\"nofollow\"\u003EGoogle\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"RT
+      @emmerblue: I am going to be in Boulder, CO mid-May to mid-August helping to
+      plant Viget West roots. Can''t wait","created_at":"Fri May 06 12:04:38 +0000
+      2011","place":null,"id_str":"66473441385127936","coordinates":null,"geo":null,"in_reply_to_user_id":null,"id":66473441385127936,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":"65951045720879104","retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"amwilkison","in_reply_to_user_id_str":"54078493","in_reply_to_status_id":65951045720879104,"contributors":null,"retweeted":false,"text":"@amwilkison
+      @sbwilk In Latin viget means \"flourish\" ... or at least that''s what someone
+      told us once ... http:\/\/www.viget.com\/about\/","created_at":"Thu May 05 01:34:18
+      +0000 2011","place":null,"id_str":"65952425646882816","coordinates":null,"geo":null,"in_reply_to_user_id":54078493,"id":65952425646882816,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":"65539714400268289","retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"jasonalley","in_reply_to_user_id_str":"9684092","in_reply_to_status_id":65539714400268289,"contributors":null,"retweeted":false,"text":"@jasonalley
+      Oops -- thanks for the heads-up. Fixed!","created_at":"Wed May 04 03:10:36 +0000
+      2011","place":null,"id_str":"65614274487259136","coordinates":null,"geo":null,"in_reply_to_user_id":9684092,"id":65614274487259136,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"CrowChick","in_reply_to_user_id_str":"9550352","in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"@CrowChick
+      Thank you, Rachel! Glad you enjoy them.","created_at":"Tue May 03 21:22:46 +0000
+      2011","place":null,"id_str":"65526737689264128","coordinates":null,"geo":null,"in_reply_to_user_id":9550352,"id":65526737689264128,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":"65515140048617473","retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"CrowChick","in_reply_to_user_id_str":"9550352","in_reply_to_status_id":65515140048617473,"contributors":null,"retweeted":false,"text":"@CrowChick
+      Ha -- thanks! We have fun with them.","created_at":"Tue May 03 20:50:29 +0000
+      2011","place":null,"id_str":"65518615293739009","coordinates":null,"geo":null,"in_reply_to_user_id":9550352,"id":65518615293739009,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"We''re
+      very pleased to welcome Rosalyn Metz to our stellar PM team! http:\/\/www.viget.com\/about\/team\/rmetz\/","created_at":"Tue
+      May 03 20:30:30 +0000 2011","place":null,"id_str":"65513583827628032","coordinates":null,"geo":null,"in_reply_to_user_id":null,"id":65513583827628032,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":"65493558563586048","retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":"jakelear","in_reply_to_user_id_str":"20272317","in_reply_to_status_id":65493558563586048,"contributors":null,"retweeted":false,"text":"@jakelear
+      Thank you. He was too good to pass up. He''s already doing some awesome work
+      over here.","created_at":"Tue May 03 19:12:38 +0000 2011","place":null,"id_str":"65493989465403392","coordinates":null,"geo":null,"in_reply_to_user_id":20272317,"id":65493989465403392,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":0,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"Good
+      to see our friends @gofivo on @dcist -- GoFivo: Craft Beer On The Cheap http:\/\/t.co\/l9W2wKQ","created_at":"Tue
+      May 03 02:09:20 +0000 2011","place":null,"id_str":"65236466015551488","coordinates":null,"geo":null,"in_reply_to_user_id":null,"id":65236466015551488,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":5,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"7
+      Ways Google Analytics Can Help Inform Design Decisions (by @anjalimerchant)
+      #marketing http:\/\/goo.gl\/fb\/3n6gW","created_at":"Sun May 01 00:27:25 +0000
+      2011","place":null,"id_str":"64486042811641857","coordinates":null,"geo":null,"in_reply_to_user_id":null,"id":64486042811641857,"source":"\u003Ca
+      href=\"http:\/\/www.google.com\/support\/youtube\/bin\/answer.py?hl=en&answer=164577\"
+      rel=\"nofollow\"\u003EGoogle\u003C\/a\u003E","favorited":false,"truncated":false},{"in_reply_to_status_id_str":null,"retweet_count":1,"user":{"show_all_inline_media":false,"geo_enabled":false,"profile_link_color":"2776a1","protected":false,"location":"Wash
+      DC, Durham NC, Boulder CO","profile_sidebar_border_color":"dad74e","name":"Viget
+      Labs","follow_request_sent":null,"time_zone":"Eastern Time (US & Canada)","friends_count":42,"url":"http:\/\/viget.com","is_translator":false,"default_profile":false,"statuses_count":719,"profile_use_background_image":true,"utc_offset":-18000,"verified":false,"created_at":"Tue
+      Mar 18 18:42:47 +0000 2008","profile_background_color":"14537f","description":"We
+      design \/ build \/ market web sites \/ products \/ ideas.","lang":"en","profile_background_image_url":"http:\/\/a0.twimg.com\/profile_background_images\/3226205\/Untitled-1.jpg","listed_count":217,"id_str":"14171594","profile_text_color":"333333","id":14171594,"profile_sidebar_fill_color":"fdfab7","profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/62482819\/logo_normal.jpg","profile_background_tile":false,"favourites_count":0,"followers_count":1887,"default_profile_image":false,"contributors_enabled":false,"following":null,"notifications":null,"screen_name":"viget"},"in_reply_to_screen_name":null,"in_reply_to_user_id_str":null,"in_reply_to_status_id":null,"contributors":null,"retweeted":false,"text":"Cloning
+      our PM is taking too long: http:\/\/yfrog.com\/h283esqpj So instead, we''re
+      trying this: http:\/\/bit.ly\/lQXBbD #recruiting","created_at":"Fri Apr 29 19:41:23
+      +0000 2011","place":null,"id_str":"64051672191729664","coordinates":null,"geo":null,"in_reply_to_user_id":null,"id":64051672191729664,"source":"\u003Ca
+      href=\"http:\/\/www.tweetdeck.com\" rel=\"nofollow\"\u003ETweetDeck\u003C\/a\u003E","favorited":false,"truncated":false}]'
+    http_version: '1.1'

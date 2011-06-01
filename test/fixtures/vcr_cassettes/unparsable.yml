@@ -1,0 +1,162 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.twitter.com:443/1/user_timeline.json
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 404
+      message: Not Found
+    headers:
+      date:
+      - Tue, 24 May 2011 20:37:21 GMT
+      server:
+      - hi
+      status:
+      - 404 Not Found
+      x-transaction:
+      - 1306269441-24478-59228
+      x-frame-options:
+      - SAMEORIGIN
+      last-modified:
+      - Tue, 24 May 2011 20:37:21 GMT
+      content-type:
+      - text/html; charset=utf-8
+      content-length:
+      - '9551'
+      pragma:
+      - no-cache
+      x-revision:
+      - DEV
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      x-mid:
+      - 62c5ab836f25e7e561ab0af1094cb4772fa74673
+      set-cookie:
+      - _twitter_sess=BAh7CDoPY3JlYXRlZF9hdGwrCADfuSMwAToHaWQiJWM4ZGY2N2JmMWE3Zjdj%250ANDBmYTM2YWZlODJkNjFiMTZkIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy%250AOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--d7d7ca2ea1e44f72e1318ea3f04eaa1c308367b7;
+        domain=.twitter.com; path=/; HttpOnly
+      - auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+      - guest_id=130626944179032468; path=/; expires=Thu, 23 Jun 2011 20:37:21 GMT
+      - k=96.10.0.146.1306269441784521; path=/; expires=Tue, 31-May-11 20:37:21 GMT;
+        domain=.twitter.com
+      vary:
+      - Accept-Encoding
+    body: ! "\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html
+      xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">\n  <head>\n
+      \   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n
+      \   <meta http-equiv=\"Content-Language\" content=\"en-us\" />\n    <meta content=\"noarchive,noindex\"
+      name=\"robots\" />\n    <title>Twitter / ?</title>\n    <link href=\"//si0.twimg.com/sticky/error_pages/favicon.ico\"
+      rel=\"shortcut icon\" type=\"image/x-icon\" />\n    <style type=\"text/css\">\n
+      \     * { border: 0; padding: 0; margin: 0; }\n      body{ margin: 10px 0; background:#C0DEED
+      url(//si0.twimg.com/sticky/error_pages/bg-clouds.png) repeat-x; color:#333;
+      font: 12px Lucida Grande, Arial, sans-serif; text-align:center }\n      #container
+      { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position:
+      relative; }\n      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:
+      15px; background: transparent url(//si0.twimg.com/sticky/error_pages/arr2.gif)
+      no-repeat scroll 21px 0px;}\n      .subpage #content .wrapper { background:
+      #fff url(//si0.twimg.com/sticky/error_pages/not-found.png) no-repeat 565px 16px;
+      \ -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 10px 0;}\n      .subpage
+      #content h2 { margin: 5px 20px; font: bold 26px Helvetica Neue, Helvetica, Arial,
+      sans-serif; *padding-bottom: 10px; }\n      .subpage #content p { margin: 0
+      20px 10px 20px; color: #666; font-size: 13px;}\n      .subpage #content ul {
+      padding-left: 30px; }\n      .subpage #content ol, #side ol { padding-left:
+      30px; }\n      a{text-decoration:none;color: #2277BB;}\n      a:hover { text-decoration:
+      underline;}\n      #content div.desc { margin: 11px 0px 10px 0px; }\n      a
+      img{border:0;}\n      ul{list-style:square;padding-left:20px;}\n      div.error
+      { width: 100%; text-align: right; margin: 10px 0;}\n      #navigation { background-color:
+      #fff; position: absolute; top: 8px; right: 0; padding: 6px 6px; font-size: 13px;
+      text-align: center; }\n      #navigation ul { margin: 0; padding: 0px; width:
+      auto; height: 100%; _width: 60px; }\n      #navigation li { display:inline;
+      padding: 0 5px; }\n      #navigation li:before { content: ' '; padding-right:
+      0; }\n      #navigation li.first:before { content: ''; padding-right: 0; }\n
+      \     #navigation, #footer { -moz-border-radius: 5px;-webkit-border-radius:
+      5px;}\n      fieldset input { border: 1px solid #ccc; padding: 5px; margin:
+      0; -moz-border-radius: 5px; -webkit-border-radius: 5px; }\n      fieldset {
+      width: 500px; background: #f1f1f1; margin: 15px 20px 10px 20px; -moz-border-radius:
+      5px; -webkit-border-radius: 5px; padding: 15px; border: 1px solid #fff; border-top:
+      1px solid #ccc;}\n      fieldset label { clear: both; display: block; padding:
+      0 0 10px 0; margin: 0; color: #666;}\n\n      /* Buttons\n      -----------------------------------------------
+      */\n      input.medium { width: 200px; vertical-align: middle;}\n      input.btn
+      { vertical-align: middle; background: #ddd url(//si0.twimg.com/sticky/error_pages/buttons/bg-btn.gif)
+      repeat-x 0 0; font:11px/14px \"Lucida Grande\",Sans-serif; width:auto; margin:0;
+      overflow:visible; padding:4px 10px 5px; border-width:1px; border-style:solid;
+      border-color:#ddd; border-bottom-color:#ccc; -moz-border-radius:4px; -khtml-border-radius:4px;
+      -webkit-border-radius:4px; border-radius:4px; color:#333; text-shadow:1px 1px
+      0 #fff; }\n      input.btn::-moz-focus-inner { padding:0; border:0; }\n      input.btn:hover,
+      .btn:focus { border-color:#999 #999 #888; background-position:0 -6px; color:#000;
+      }\n      input.btn:active { background-image:none; text-shadow:none; outline:none;
+      }\n\n      /* Footer\n      -----------------------------------------------
+      */\n      #footer { clear: left; width: 555px; text-align: left; padding: 0px
+      0; font-size: 11px; color: #778899;}\n      #footer ul { clear: both; display:
+      block;}\n      #footer li { display: block; float: left; margin: 0 16px 0 0;}\n
+      \     #footer li.first:before { content: ''; padding-right: 0; }\n      #languages
+      li { margin-bottom: 25px; font-size: 12px; width: 14%; text-align: center; }\n\n
+      \   </style>\n    <script type=\"text/javascript\">\n      function clearUserSearch()
+      {\n        document.getElementById('user_search_q').value = '';\n      }\n    </script>\n
+      \ </head>\n  <body class='page-not-found'>\n    <div id=\"container\" class=\"subpage\">\n
+      \     <div id=\"navigation\">\n        <ul>\n          <li class=\"first\"><a
+      href=\"//twitter.com\">Home &#8250;</a></li>\n        </ul>\n      </div>\n
+      \     <h1 id=\"header\"><a href=\"//twitter.com\"><img src=\"//si0.twimg.com/sticky/error_pages/twitter_logo_header.png\"
+      width=\"155\" height=\"36\" alt=\"Twitter.com\" /></a></h1>\n      <div id=\"content\">\n
+      \       <div class=\"desc\"></div>\n        <div class=\"wrapper\">\n          <h2>Sorry,
+      that page doesn’t exist!</h2>\n           <form action=\"//twitter.com/search/users\"
+      method=\"get\">\n              <fieldset class=\"common-form\">\n                  <label
+      for=\"search_users_q\">Search for a username, first or last name</label>\n                  <input
+      class=\"medium\" id=\"search_users_q\" name=\"q\" type=\"text\" />\n                  <input
+      type=\"hidden\" name=\"category\" value=\"people\" />\n                  <input
+      type=\"hidden\" name=\"source\" value=\"find_on_twitter\" />\n                  <input
+      class=\"submit btn\" id=\"search_users_submit\" type=\"submit\" value=\"search\"
+      />\n              </fieldset>\n          </form>\n        </div>\n      </div>\n
+      \     <div id=\"footer\" style=\"width:100%\">\n        <ul id=\"languages\">\n
+      \         <li class=\"first\"><a onclick=\"displayLanguage('en');return false;\"
+      href=\"#\">English</a></li>\n          <li><a onclick=\"displayLanguage('de');return
+      false;\" href=\"#\">Deutsch</a></li>\n          <li><a onclick=\"displayLanguage('es');return
+      false;\" href=\"#\">Español</a></li>\n          <li><a onclick=\"displayLanguage('fr');return
+      false;\" href=\"#\">Français</a></li>\n          <li><a onclick=\"displayLanguage('it');return
+      false;\" href=\"#\">Italiano</a></li>\n          <li><a onclick=\"displayLanguage('ja');return
+      false;\" href=\"#\">日本語</a></li>\n          <li><a onclick=\"displayLanguage('ko');return
+      false;\" href=\"#\">한국어</a></li>\n        </ul>\n\n        <ul>\n          <li
+      class=\"first\">&copy; 2011 Twitter</li>\n          <li><a href=\"/about\">About
+      Us</a></li>\n          <li><a href=\"/about/contact\">Contact</a></li>\n          <li><a
+      href=\"http://blog.twitter.com/\">Blog</a></li>\n          <li><a href=\"http://status.twitter.com/\">Status</a></li>\n
+      \         <li><a href=\"http://dev.twitter.com/\">API</a></li>\n          <li><a
+      href=\"/help\">Help</a></li>\n          <li><a href=\"/jobs\">Jobs</a></li>\n
+      \         <li><a href=\"/tos\">TOS</a></li>\n          <li><a href=\"/privacy\">Privacy</a></li>\n
+      \       </ul>\n      </div>\n    </div>\n    <!-- BEGIN google analytics -->\n
+      \   <script type=\"text/javascript\">\n      var gaJsHost = ((\"https:\" ==
+      document.location.protocol) ? \"https://ssl.\" : \"http://www.\");\n      document.write(unescape(\"%3Cscript
+      src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));\n
+      \   </script>\n    <script type=\"text/javascript\">\n      var pageTracker
+      = _gat._getTracker(\"UA-30775-6\");\n      pageTracker._setDomainName(\"twitter.com\");\n
+      \     pageTracker._trackPageview('404 Error');\n    </script>\n    <!-- END
+      google analytics -->\n    <script type=\"text/javascript\">\n    //<![CDATA[\n
+      \   var twttr = {};\n\n    twttr.translations = {\n      en: {\n        home:
+      'Home &#8250;',\n        title: 'Sorry, that page doesn’t exist!',\n        prompt:
+      'Search for a username, first or last name',\n        button: 'search'\n      },\n
+      \     de: {\n        home: 'Home &#8250;',\n        title: 'Sorry, diese Seite
+      existiert nicht!',\n        prompt: 'Suche nach einem Nutzernamen, einem Vor-
+      oder Nachnamen.',\n        button: 'Suche'\n      },\n      es: {\n        home:
+      'Página de Inicio &#8250;',\n        title: 'Lo sentimos, ¡esa página no existe!',\n
+      \       prompt: 'Busca por nombre de usuario, nombre o apellido',\n        button:
+      'buscar'\n      },\n      fr: {\n        home: 'Accueil &#8250;',\n        title:
+      'Désolé, cette page n\\'existe pas !',\n        prompt: 'Rechercher un pseudo,
+      un nom, ou un prénom',\n        button: 'rechercher'\n      },\n      it: {\n
+      \       home: 'Pagina Iniziale &#8250;',\n        title: 'Ci spiace ma questa
+      pagina non esiste!',\n        prompt: 'Cerca un nome utente oppure nome e cognome',\n
+      \       button: 'cerca'\n      },\n      ja: {\n        home: 'ホーム &#8250;',\n
+      \       title: '申し訳ありませんが、そのページは存在しません。',\n        prompt: 'ユーザー名、または姓、名にて検索できます',\n
+      \       button: '検索する'\n      },\n      ko: {\n\t    home: '홈 &#8250;',\n\t
+      \   title: '존재하지 않는 페이지입니다! ',\n\t    prompt: '사용자 아이디나 이름을 검색해보세요',\n\t    button:
+      '검색'\n      }\n    };\n\n    function displayLanguage(lang) {\n      if (lang
+      && twttr.translations[lang]) {\n        document.getElementsByTagName('h2')[0].innerHTML
+      = twttr.translations[lang].title;\n        document.getElementsByTagName('label')[0].innerHTML
+      = twttr.translations[lang].prompt;\n        document.getElementById('search_users_submit').value
+      = twttr.translations[lang].button;\n        document.getElementById('navigation').getElementsByTagName('a')[0].innerHTML
+      = twttr.translations[lang].home;\n      }\n    }\n\n    var lang = window.navigator.language
+      ? window.navigator.language.replace(/^(..).*$/, '$1') : undefined;\n    displayLanguage(lang);\n
+      \   //]]>\n    </script>\n  </body>\n</html>\n"
+    http_version: '1.1'

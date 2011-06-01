@@ -1,0 +1,40 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.twitter.com:443/1/statuses/bogus_timeline.json?screen_name=viget
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 401
+      message: Unauthorized
+    headers:
+      date:
+      - Tue, 24 May 2011 20:54:42 GMT
+      server:
+      - hi
+      status:
+      - 401 Unauthorized
+      www-authenticate:
+      - OAuth realm="https://api.twitter.com"
+      x-runtime:
+      - '0.00250'
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '104'
+      cache-control:
+      - no-cache, max-age=300
+      set-cookie:
+      - _twitter_sess=BAh7CDoPY3JlYXRlZF9hdGwrCAHCySMwAToHaWQiJWY5NjUwZDk2OGZjYzM5%250AMmNhNjIxYjAxZmEyZTc5OWNmIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy%250AOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--129022f5c334f13f162696a32a2af8bd1cd29313;
+        domain=.twitter.com; path=/; HttpOnly
+      - guest_id=13062704829444930; path=/; expires=Thu, 23 Jun 2011 20:54:42 GMT
+      - k=96.10.0.146.1306270482941465; path=/; expires=Tue, 31-May-11 20:54:42 GMT;
+        domain=.twitter.com
+      expires:
+      - Tue, 24 May 2011 20:59:42 GMT
+      vary:
+      - Accept-Encoding
+    body: ! '{"error":"Could not authenticate you.","request":"\/1\/statuses\/bogus_timeline.json?screen_name=viget"}'
+    http_version: '1.1'
