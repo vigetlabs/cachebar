@@ -154,6 +154,25 @@ class TestCacheBar < Test::Unit::TestCase
             end
           end
         end
+      
+        context 'with a post' do
+          setup do
+            VCR.insert_cassette('status_update_post')
+          end
+          
+          should 'never try to cache' do
+            @redis.expects(:exists).never
+            @redis.expects(:set).never
+            @redis.expects(:expires).never
+            @redis.expects(:hset).never
+            @redis.expects(:get).never
+            TwitterAPI.update_status('viget', 'My new status.')
+          end
+          
+          teardown do
+            VCR.eject_cassette
+          end
+        end
       end
 
       context 'with caching off' do

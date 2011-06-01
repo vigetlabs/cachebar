@@ -1,0 +1,49 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://api.twitter.com:443/1/statuses/update.json?screen_name=viget&status=My%20new%20status.
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 01 Jun 2011 20:37:34 GMT
+      server:
+      - hi
+      status:
+      - 200 OK
+      x-transaction:
+      - 1306960654-78174-14919
+      x-frame-options:
+      - SAMEORIGIN
+      last-modified:
+      - Wed, 01 Jun 2011 20:37:34 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '1'
+      pragma:
+      - no-cache
+      x-revision:
+      - DEV
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      x-mid:
+      - 174ecf14d1392c67f19109aa27b707fad326ca40
+      set-cookie:
+      - _twitter_sess=BAh7CToMY3NyZl9pZCIlYTdjZTM5MGNiYjM3MjY4ZWRhM2FhNGYwODAxMDk0%250AMjU6D2NyZWF0ZWRfYXRsKwiR8OxMMAE6B2lkIiVhMWRhMmE2M2QzMjNhMDU5%250ANjg1OTNjODkyNTFmMmYwMSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%250ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%253D%253D--200a7dfe09fd1b68cc9e4924ce8af6fc7278d954;
+        domain=.twitter.com; path=/; HttpOnly
+      - auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+      - guest_id=130696065447966883; path=/; expires=Fri, 01 Jul 2011 20:37:34 GMT
+      - k=70.182.186.100.1306960654472912; path=/; expires=Wed, 08-Jun-11 20:37:34
+        GMT; domain=.twitter.com
+      vary:
+      - Accept-Encoding
+    body: ! ""
+    http_version: '1.1'
