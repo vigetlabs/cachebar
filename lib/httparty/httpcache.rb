@@ -21,11 +21,12 @@ module HTTParty
     end
 
     def perform_with_caching
-      if HTTPCache.perform_caching && HTTPCache.apis.keys.include?(uri.host)
+      if cacheable?
         if response_in_cache?
           log_message("Retrieving response from cache")
           response_from(response_body_from_cache)
         else
+          validate
           begin
             httparty_response = timeout(timeout_length) do
               perform_without_caching
@@ -49,6 +50,11 @@ module HTTParty
     end
 
     protected
+    
+    def cacheable?
+      HTTPCache.perform_caching && HTTPCache.apis.keys.include?(uri.host) &&
+        [Net::HTTP::Get, Net::HTTP::Head, Net::HTTP::Options].include?(http_method)
+    end
 
     def response_from(response_body)
       HTTParty::Response.new(self, OpenStruct.new(:body => response_body), parse_response(response_body))
