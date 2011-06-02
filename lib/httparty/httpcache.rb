@@ -53,7 +53,7 @@ module HTTParty
     
     def cacheable?
       HTTPCache.perform_caching && HTTPCache.apis.keys.include?(uri.host) &&
-        [Net::HTTP::Get, Net::HTTP::Head, Net::HTTP::Options].include?(http_method)
+        http_method == Net::HTTP::Get
     end
 
     def response_from(response_body)
