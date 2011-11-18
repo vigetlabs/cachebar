@@ -5,7 +5,6 @@ require 'active_support'
 require 'active_support/core_ext/module/aliasing'
 require 'active_support/core_ext/module/attribute_accessors'
 require 'active_support/core_ext/object/blank'
-require 'core_ext/hash/require_keys'
 if RUBY_VERSION.split('.')[1].to_i < 9
   begin
     require 'system_timer'
@@ -18,7 +17,12 @@ require 'httparty/httpcache'
 module CacheBar
   def self.register_api_to_cache(host, options)
     raise ArgumentError, "You must provide a host that you are caching API responses for." if host.blank?
-    options.require_keys(:expire_in, :key_name)
+
+    missing_options = ([:expire_in, :key_name] - options.keys)
+    if missing_options.present?
+      raise(ArgumentError, "Missing some required options: #{missing_options.join(", ")}")
+    end
+
     HTTParty::HTTPCache.apis[host] = options
   end
 
@@ -32,6 +36,7 @@ module CacheBar
       CacheBar.register_api_to_cache(host, options)
     end
   end
+
 end
 
 HTTParty::ClassMethods.send(:include, CacheBar::ClassMethods)
