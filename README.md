@@ -64,7 +64,7 @@ If you already have HTTParty included then you just need to use the `caches_api_
 
 * `host`* *optional*:
   * This is used internally to decide which requests to try to cache responses for.
-    If it's not provided it will use the `base_uri` specified on the class/module that HTTParty is included into.
+    If you've defined `base_uri` on the class/module that HTTParty is included into then this option is not needed.
 * `key_name`:
   * This is the name used in Redis to create a part of the cache key to easily differentiate it from other API caches.
 * `expire_in`:
