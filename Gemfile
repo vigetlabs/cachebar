@@ -4,7 +4,6 @@ gem "redis"
 gem "redis-namespace"
 gem 'httparty', '~> 0.7.7'
 gem 'activesupport'
-gem 'SystemTimer', :platforms => :ruby_18
 
 group :development do
   gem "shoulda"
@@ -15,4 +14,5 @@ group :development do
   gem 'vcr'
   gem 'mocha'
   gem 'rake', '~> 0.8.7'
+  gem 'SystemTimer', :platforms => :ruby_18
 end
