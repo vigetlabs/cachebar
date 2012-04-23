@@ -14,7 +14,7 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "CacheBar"
+  gem.name = "cachebar"
   gem.homepage = "http://github.com/vigetlabs/cachebar"
   gem.license = "MIT"
   gem.summary = %Q{A simple API caching layer built on top of HTTParty and Redis}

@@ -2,7 +2,7 @@ source "http://rubygems.org"
 
 gem "redis"
 gem "redis-namespace"
-gem 'httparty', '~> 0.7.7'
+gem 'httparty', '~> 0.8.3'
 gem 'activesupport'
 
 group :development do

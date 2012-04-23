@@ -31,6 +31,7 @@ module HTTParty
             httparty_response = timeout(timeout_length) do
               perform_without_caching
             end
+            httparty_response.parsed_response
             if httparty_response.response.is_a?(Net::HTTPSuccess)
               log_message("Storing good response in cache")
               store_in_cache(httparty_response.body)
@@ -57,7 +58,7 @@ module HTTParty
     end
 
     def response_from(response_body)
-      HTTParty::Response.new(self, OpenStruct.new(:body => response_body), parse_response(response_body))
+      HTTParty::Response.new(self, OpenStruct.new(:body => response_body), lambda {parse_response(response_body)})
     end
 
     def retrieve_and_store_backup(httparty_response = nil)
