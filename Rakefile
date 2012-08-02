@@ -32,14 +32,17 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-  test.rcov_opts << '--sort coverage'
-  test.rcov_opts << '--only-uncovered'
+begin
+  require 'rcov/rcovtask'
+  Rcov::RcovTask.new do |test|
+    test.libs << 'test'
+    test.pattern = 'test/**/test_*.rb'
+    test.verbose = true
+    test.rcov_opts << '--exclude "gems/*"'
+    test.rcov_opts << '--sort coverage'
+    test.rcov_opts << '--only-uncovered'
+  end
+rescue Exception
 end
 
 task :default => :test
