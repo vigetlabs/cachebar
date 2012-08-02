@@ -11,7 +11,7 @@ group :development do
   gem "jeweler", "~> 1.6"
   gem "rcov"
   gem "webmock"
-  gem 'vcr'
+  gem 'vcr', '~> 1.11'
   gem 'mocha'
   gem 'rake', '~> 0.8.7'
   gem 'SystemTimer', :platforms => :ruby_18
