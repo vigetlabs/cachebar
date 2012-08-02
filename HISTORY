@@ -5,3 +5,13 @@
   * Store a backup of responses incase the API service goes down.
   * If an exception or timeout occurs and there is no backup an exception is raised.
   * If a bad response is received the backup will be used if available otherwise the bad response will be returned
+== 1.0.1 / 2011-06-01
+  * Include gemspec in release
+  * Allow non-required keys via `require_keys` method
+== 1.0.2 / 2011-11-17
+  * Only cache get requests requests
+  * SystemTimer is no longer a hard dep because it's not needed or available on ruby 1.9
+  * Don't extend core classes
+== 1.1.0 / 2012-4-23
+  * Update to work with latest version of HTTParty
+  * Change name of gem (gem names should be all lowercase)
