@@ -58,6 +58,17 @@ By default when we fallback to using a backup response, we then hold off looking
 
     HTTParty::HTTPCache.cache_stale_backup_time = 120 # 2 minutes
 
+If you want to perform an action (say notify an error tracking service) when an exception happens while performing or processing a request you can specify a callback. The only requirement is that it responds to `call` and that `call` accepts 3 parameters. Those 3 in order will be the exception, the redis key name of the API, and the URL endpoint:
+
+    HTTParty::HTTPCache.exception_callback = lambda { |exception, api_name, url|
+      Airbrake.notify_or_ignore(exception, {
+        :component => api_name,
+        :url => url,
+        :cgi_data => ENV
+      })
+    }
+
+
 ### 2. Configuring an HTTParty module or class
 
 If you already have HTTParty included then you just need to use the `caches_api_responses` method to register that API for caching, and your done. The `caches_api_responses` takes a hash of options:

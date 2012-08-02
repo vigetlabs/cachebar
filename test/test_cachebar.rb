@@ -101,6 +101,16 @@ class TestCacheBar < Test::Unit::TestCase
             end
           end
 
+          should 'call exception callback if defined' do
+            exception_callback = mock('exception_callback')
+            exception_callback.expects(:call).with(instance_of(MultiJson::DecodeError), 'twitter', 'https://api.twitter.com/1/user_timeline.json').returns(true)
+            HTTParty::HTTPCache.exception_callback = exception_callback
+            mock_response_in_backup(@uri_hash)
+            
+            TwitterAPI.bogus_resource
+            HTTParty::HTTPCache.exception_callback = nil
+          end
+
           teardown do
             VCR.eject_cassette
           end

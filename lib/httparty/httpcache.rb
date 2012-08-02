@@ -7,7 +7,8 @@ module HTTParty
                     :logger, 
                     :redis,
                     :timeout_length, 
-                    :cache_stale_backup_time
+                    :cache_stale_backup_time,
+                    :exception_callback
 
     self.perform_caching = false
     self.apis = {}
@@ -40,7 +41,10 @@ module HTTParty
             else
               retrieve_and_store_backup(httparty_response)
             end
-          rescue *exceptions
+          rescue *exceptions => e
+            if exception_callback && exception_callback.respond_to?(:call)
+              exception_callback.call(e, redis_key_name, normalized_uri)
+            end
             retrieve_and_store_backup
           end
         end
@@ -89,7 +93,7 @@ module HTTParty
     end
 
     def cache_key_name
-      @cache_key_name ||= "api-cache:#{HTTPCache.apis[uri.host][:key_name]}:#{uri_hash}"
+      @cache_key_name ||= "api-cache:#{redis_key_name}:#{uri_hash}"
     end
 
     def uri_hash
@@ -101,7 +105,7 @@ module HTTParty
     end
 
     def backup_key
-      "api-cache:#{HTTPCache.apis[uri.host][:key_name]}"
+      "api-cache:#{redis_key_name}"
     end
 
     def backup_response
@@ -123,6 +127,10 @@ module HTTParty
 
     def store_backup(response_body)
       redis.hset(backup_key, uri_hash, response_body)
+    end
+    
+    def redis_key_name
+      HTTPCache.apis[uri.host][:key_name]
     end
 
     def log_message(message)
