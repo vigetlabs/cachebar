@@ -4,7 +4,10 @@ require 'digest/md5'
 require 'active_support'
 require 'active_support/core_ext/module/aliasing'
 require 'active_support/core_ext/module/attribute_accessors'
+require 'active_support/core_ext/class/attribute'
 require 'active_support/core_ext/object/blank'
+require 'active_support/core_ext/string/inflections'
+require 'active_support/core_ext/module/delegation'
 if RUBY_VERSION.split('.')[1].to_i < 9
   begin
     require 'system_timer'
@@ -15,6 +18,8 @@ end
 require 'httparty/httpcache'
 
 module CacheBar
+  autoload :DataStore, 'cachebar/data_store'
+
   def self.register_api_to_cache(host, options)
     raise ArgumentError, "You must provide a host that you are caching API responses for." if host.blank?
 
