@@ -4,6 +4,7 @@ gem "redis"
 gem "redis-namespace"
 gem 'httparty', '~> 0.8.3'
 gem 'activesupport'
+gem 'dalli'
 
 group :development do
   gem "shoulda"

@@ -262,5 +262,34 @@ class TestCacheBar < Test::Unit::TestCase
       end
     end
 
+    context 'connecting to memcached' do
+      setup do
+        HTTParty::HTTPCache.data_store_class = :memcached
+        VCR.insert_cassette('good_response')
+
+        @memcached = Dalli::Client.new('localhost:11211')
+        CacheBar::DataStore::Memcached.client = @memcached
+
+        @memcached.flush
+      end
+
+      should "store its response in the cache" do
+        assert_nil @memcached.get('api-cache:twitter:007a3a7aa28b11ef362040283e114f55')
+        TwitterAPI.user_timeline('viget')
+        assert_not_nil @memcached.get('api-cache:twitter:007a3a7aa28b11ef362040283e114f55')
+      end
+
+      should "store a backup of its response" do
+        assert_nil @memcached.get('api-cache:backup:twitter:007a3a7aa28b11ef362040283e114f55')
+        TwitterAPI.user_timeline('viget')
+        assert_not_nil @memcached.get('api-cache:backup:twitter:007a3a7aa28b11ef362040283e114f55')
+      end
+
+      teardown do
+        VCR.eject_cassette
+        @memcached.flush
+      end
+    end
+
   end
 end

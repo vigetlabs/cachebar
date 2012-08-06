@@ -1,11 +1,5 @@
 require 'helper'
 
-# HTTParty::HTTPCache.data_store = :redis
-# // HTTParty::HTTPCache.data_store = MyDataStore
-# 
-# CacheBar::DataStores::Redis.client = $redis
-
-
 class TestRedisDataStore < Test::Unit::TestCase
   context 'CacheBar::DataStore::Redis' do
     should 'initialize with api_name and uri_hash' do

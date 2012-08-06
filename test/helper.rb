@@ -18,6 +18,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'cachebar'
 require 'twitter_api'
 require 'redis-namespace'
+require 'dalli'
 
 VCR.config do |c|
   c.cassette_library_dir = 'test/fixtures/vcr_cassettes'
