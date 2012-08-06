@@ -7,7 +7,7 @@ module CacheBar
       end
 
       def response_body_exists?
-        client.get(cache_key_name) != nil
+        !client.get(cache_key_name).nil?
       end
       
       def get_response_body
@@ -19,7 +19,7 @@ module CacheBar
       end
       
       def backup_exists?
-        client.get(backup_key_name) != nil
+        !client.get(backup_key_name).nil?
       end
       
       def get_backup
