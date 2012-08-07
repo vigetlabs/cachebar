@@ -10,10 +10,19 @@ module HTTParty
                     :cache_stale_backup_time,
                     :exception_callback
 
+    mattr_reader :data_store_class
+
     self.perform_caching = false
     self.apis = {}
     self.timeout_length = 5 # 5 seconds
     self.cache_stale_backup_time = 300 # 5 minutes
+
+    delegate :response_body_exists?,
+             :get_response_body,
+             :backup_exists?,
+             :get_backup,
+             :store_backup,
+             :to => :data_store
 
     def self.included(base)
       base.class_eval do
@@ -21,11 +30,23 @@ module HTTParty
       end
     end
 
+    def self.data_store_class=(data_store_name_or_class)
+      case data_store_name_or_class
+      when Symbol
+        require "cachebar/data_store/#{data_store_name_or_class}"
+        @@data_store_class = CacheBar::DataStore.const_get(data_store_name_or_class.to_s.camelcase.to_sym)
+      when Class
+        @@data_store_class = data_store_name_or_class
+      else
+        raise ArgumentError, "data store must be a symbol or a class"
+      end
+    end
+
     def perform_with_caching
       if cacheable?
-        if response_in_cache?
+        if response_body_exists?
           log_message("Retrieving response from cache")
-          response_from(response_body_from_cache)
+          response_from(get_response_body)
         else
           validate
           begin
@@ -43,7 +64,7 @@ module HTTParty
             end
           rescue *exceptions => e
             if exception_callback && exception_callback.respond_to?(:call)
-              exception_callback.call(e, redis_key_name, normalized_uri)
+              exception_callback.call(e, api_key_name, normalized_uri)
             end
             retrieve_and_store_backup
           end
@@ -68,7 +89,7 @@ module HTTParty
     def retrieve_and_store_backup(httparty_response = nil)
       if backup_exists?
         log_message('using backup')
-        response_body = backup_response
+        response_body = get_backup
         store_in_cache(response_body, cache_stale_backup_time)
         response_from(response_body)
       elsif httparty_response
@@ -92,44 +113,19 @@ module HTTParty
       query.split('&').sort.join('&') unless query.blank?
     end
 
-    def cache_key_name
-      @cache_key_name ||= "api-cache:#{redis_key_name}:#{uri_hash}"
-    end
-
     def uri_hash
       @uri_hash ||= Digest::MD5.hexdigest(normalized_uri)
     end
 
-    def response_in_cache?
-      redis.exists(cache_key_name)
-    end
-
-    def backup_key
-      "api-cache:#{redis_key_name}"
-    end
-
-    def backup_response
-      redis.hget(backup_key, uri_hash)
-    end
-
-    def backup_exists?
-      redis.exists(backup_key) && redis.hexists(backup_key, uri_hash)
-    end
-
-    def response_body_from_cache
-      redis.get(cache_key_name)
-    end
-
     def store_in_cache(response_body, expires = nil)
-      redis.set(cache_key_name, response_body)
-      redis.expire(cache_key_name, (expires || HTTPCache.apis[uri.host][:expire_in]))
+      data_store.store_response_body(response_body, (expires || HTTPCache.apis[uri.host][:expire_in]))
     end
 
-    def store_backup(response_body)
-      redis.hset(backup_key, uri_hash, response_body)
+    def data_store
+      @data_store ||= data_store_class.new(api_key_name, uri_hash)
     end
     
-    def redis_key_name
+    def api_key_name
       HTTPCache.apis[uri.host][:key_name]
     end
 

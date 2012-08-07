@@ -1,8 +1,8 @@
 # CacheBar
 
-CacheBar is a simple API caching layer built on top of Redis and HTTParty.
+CacheBar is a simple API caching layer built on top of a caching data store (like Redis) and HTTParty.
 
-When a good request is made to the API through an HTTParty module or class configured to be cached, it caches the response body in Redis. The cache is set to expire in the configured length of time. All following identical requests use the cache in Redis. When the cache expires it will attempt to refill the cache with a new good response. If though the response that comes back is bad (there was timeout, a 404, or some other problem), then CacheBar will fetch a backup response we also store in Redis (in a separate non-expiring hash). When it pulls this backup response out it inserts it into the standard cache and sets it to expire in 5 minutes. This way we won't look for a new good response for another 5 minutes.
+When a good request is made to the API through an HTTParty module or class configured to be cached, it caches the response body in a data store (like Redis). The cache is set to expire in the configured length of time. All following identical requests use the cache in the data store. When the cache expires it will attempt to refill the cache with a new good response. If though the response that comes back is bad (there was timeout, a 404, or some other problem), then CacheBar will fetch a backup response we also stored in the data store. When it pulls this backup response out it inserts it into the standard cache and sets it to expire in 5 minutes. This way we won't look for a new good response for another 5 minutes.
 
 Using this gem does not mean that all your HTTParty modules and requests will be automatically cached. You will have to configure them on a case by case basis. This means you can have some APIs that are cached and others that aren't.
 
@@ -10,18 +10,13 @@ Using this gem does not mean that all your HTTParty modules and requests will be
 
     gem install cachebar
 
-If you're on Ruby 1.8 it is recommended that you also install the SystemTimer gem:
-
-    gem install SystemTimer
-
 ### Inside a Rails/Rack app:
 
 Add this to your Gemfile:
 
-    gem 'SystemTimer', :platforms => :ruby_18
     gem 'cachebar'
 
-Follow the instructions below for configuring CacheBar.
+You should also make sure to specify the data store client you will be using. Follow the instructions below for configuring CacheBar.
 
 ## Usage
 
@@ -29,9 +24,19 @@ Although you can use CacheBar in any type of application, the examples provided 
 
 ### 1. Configuring CacheBar
 
-There's a few configuration options to CacheBar, the first is specifying a Redis connection to use.
+There's a few configuration options to CacheBar, the first is specifying a data store and defining it's connection. While CacheBar was built with Redis in mind however we also include a memcached adapter if you prefer that. To configure a data store you can either use a symbol for Redis or memcached:
 
-If you have an initializer for defining your Redis connection already like this:
+    HTTParty::HTTPCache.data_store_class = :redis
+
+Or you can build your own data store adapter:
+
+    class MyDataStore < CacheBar::DataStore::AbstractDataStore
+      # ...
+    end
+    
+    HTTParty::HTTPCache.data_store_class = MyDataStore
+
+After that you need to configure the client and set it on the adapter. If you're using redis and you have an initializer for defining your Redis connection already like this:
 
     REDIS_CONFIG = YAML.load_file(Rails.root+'config/redis.yml')[Rails.env].freeze
     redis = Redis.new(:host => REDIS_CONFIG['host'], :port => REDIS_CONFIG['port'],
@@ -40,7 +45,9 @@ If you have an initializer for defining your Redis connection already like this:
 
 Then you can just add this:
 
-    HTTParty::HTTPCache.redis = $redis
+    CacheBar::DataStore::Redis.client = $redis
+
+However every data store adapter will have a class level attribute of `client` that you should use to configure the client.
 
 You'll then also want to turn on caching in the appropriate environments. For instance you'll want to add this to `config/environments/production.rb`:
 
@@ -58,7 +65,7 @@ By default when we fallback to using a backup response, we then hold off looking
 
     HTTParty::HTTPCache.cache_stale_backup_time = 120 # 2 minutes
 
-If you want to perform an action (say notify an error tracking service) when an exception happens while performing or processing a request you can specify a callback. The only requirement is that it responds to `call` and that `call` accepts 3 parameters. Those 3 in order will be the exception, the redis key name of the API, and the URL endpoint:
+If you want to perform an action (say notify an error tracking service) when an exception happens while performing or processing a request you can specify a callback. The only requirement is that it responds to `call` and that `call` accepts 3 parameters. Those 3 in order will be the exception, the key name of the API, and the URL endpoint:
 
     HTTParty::HTTPCache.exception_callback = lambda { |exception, api_name, url|
       Airbrake.notify_or_ignore(exception, {
@@ -77,7 +84,7 @@ If you already have HTTParty included then you just need to use the `caches_api_
   * This is used internally to decide which requests to try to cache responses for.
     If you've defined `base_uri` on the class/module that HTTParty is included into then this option is not needed.
 * `key_name`:
-  * This is the name used in Redis to create a part of the cache key to easily differentiate it from other API caches.
+  * This is the name used in the data store to create a part of the cache key to easily differentiate it from other API caches.
 * `expire_in`:
   * This determines how long the good API responses are cached for.
 

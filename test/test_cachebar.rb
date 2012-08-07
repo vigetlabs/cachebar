@@ -3,10 +3,30 @@ require 'helper'
 class TestCacheBar < Test::Unit::TestCase
   context 'CacheBar' do
 
+    context 'defining the data store' do
+      should 'be able to use a symbol of an existing pre-packaged data store' do
+        HTTParty::HTTPCache.data_store_class = :redis
+        assert_equal CacheBar::DataStore::Redis, HTTParty::HTTPCache.data_store_class
+      end
+      
+      should 'be able to use a class of an existing pre-packaged data store' do
+        class SampleDataStore; end
+        HTTParty::HTTPCache.data_store_class = SampleDataStore
+        assert_equal SampleDataStore, HTTParty::HTTPCache.data_store_class
+      end
+      
+      should 'raise exception if something else is passed in' do
+        assert_raise ArgumentError do
+          HTTParty::HTTPCache.data_store_class = 'data_store'
+        end
+      end
+    end
+
     context 'mocking redis' do
       setup do
+        HTTParty::HTTPCache.data_store_class = :redis
         @redis = mock
-        HTTParty::HTTPCache.redis = @redis
+        CacheBar::DataStore::Redis.client = @redis
       end
 
       context 'with caching on' do
@@ -209,12 +229,13 @@ class TestCacheBar < Test::Unit::TestCase
 
     context 'connecting to redis' do
       setup do
+        HTTParty::HTTPCache.data_store_class = :redis
         VCR.insert_cassette('good_response')
 
         redis = Redis.new(:host => 'localhost', :port => 6379,
           :thread_safe => true, :db => '3')
         @redis = Redis::Namespace.new('httpcache', :redis => redis)
-        HTTParty::HTTPCache.redis = @redis
+        CacheBar::DataStore::Redis.client = @redis
 
         @redis.keys("api-cache*").each do |key|
           @redis.del(key)
@@ -238,6 +259,35 @@ class TestCacheBar < Test::Unit::TestCase
         @redis.keys("api-cache*").each do |key|
           @redis.del(key)
         end
+      end
+    end
+
+    context 'connecting to memcached' do
+      setup do
+        HTTParty::HTTPCache.data_store_class = :memcached
+        VCR.insert_cassette('good_response')
+
+        @memcached = Dalli::Client.new('localhost:11211')
+        CacheBar::DataStore::Memcached.client = @memcached
+
+        @memcached.flush
+      end
+
+      should "store its response in the cache" do
+        assert_nil @memcached.get('api-cache:twitter:007a3a7aa28b11ef362040283e114f55')
+        TwitterAPI.user_timeline('viget')
+        assert_not_nil @memcached.get('api-cache:twitter:007a3a7aa28b11ef362040283e114f55')
+      end
+
+      should "store a backup of its response" do
+        assert_nil @memcached.get('api-cache:backup:twitter:007a3a7aa28b11ef362040283e114f55')
+        TwitterAPI.user_timeline('viget')
+        assert_not_nil @memcached.get('api-cache:backup:twitter:007a3a7aa28b11ef362040283e114f55')
+      end
+
+      teardown do
+        VCR.eject_cassette
+        @memcached.flush
       end
     end
 
