@@ -1,5 +1,7 @@
 # CacheBar
 
+[![Code Climate](https://codeclimate.com/github/vigetlabs/cachebar.png)](https://codeclimate.com/github/vigetlabs/cachebar)
+
 CacheBar is a simple API caching layer built on top of Redis and HTTParty.
 
 When a good request is made to the API through an HTTParty module or class configured to be cached, it caches the response body in Redis. The cache is set to expire in the configured length of time. All following identical requests use the cache in Redis. When the cache expires it will attempt to refill the cache with a new good response. If though the response that comes back is bad (there was timeout, a 404, or some other problem), then CacheBar will fetch a backup response we also store in Redis (in a separate non-expiring hash). When it pulls this backup response out it inserts it into the standard cache and sets it to expire in 5 minutes. This way we won't look for a new good response for another 5 minutes.
