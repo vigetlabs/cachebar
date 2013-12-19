@@ -5,7 +5,7 @@ require 'active_support'
 require 'active_support/core_ext/module/aliasing'
 require 'active_support/core_ext/module/attribute_accessors'
 require 'active_support/core_ext/object/blank'
-if RUBY_VERSION.split('.')[1].to_i < 9
+if RUBY_VERSION < '1.9'
   begin
     require 'system_timer'
   rescue LoadError
