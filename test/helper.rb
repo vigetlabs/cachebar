@@ -8,7 +8,7 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 require 'test/unit'
-require 'mocha'
+require 'mocha/mini_test'
 require 'shoulda'
 require 'vcr'
 require 'active_support/testing/assertions'
